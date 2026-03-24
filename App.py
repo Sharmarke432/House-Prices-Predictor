@@ -5,7 +5,7 @@ import joblib
 
 # ── Load your trained model ───────────────────────────────────────
 model = joblib.load("xgb_model.pkl")
-
+df = pd.read_csv("
 st.title("House Price Predictor")
 
 #load mapping
@@ -46,7 +46,7 @@ zipcode = st.number_input(
 )
 
 #transform zipcode
-zipcode_mean_price = zipcode_mean_map.get(zipcode, df["price"].mean())
+zipcode_mean_price = zipcode_mean_map.get(zipcode, zipcode_stats["price"].mean())
 
 # ── Predict ───────────────────────────────────────────────────────
 if st.button("Predict Price"):
