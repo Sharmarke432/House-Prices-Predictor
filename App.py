@@ -16,7 +16,6 @@ def load_models():
         "Ridge": joblib.load("ridge_model.pkl"),
         "LightGBM": joblib.load("lightgbm_model.pkl"), 
         "XGBoost": joblib.load("xgboost_model.pkl"),
-        "Random Forest": joblib.load("rf_model.pkl"),
         "KNN": joblib.load("knn_model.pkl")
     }
     scaler = joblib.load("scaler.pkl")
@@ -102,7 +101,7 @@ if input_data.isnull().any().any() or np.isinf(input_data.select_dtypes(np.numbe
     st.stop()
 
 # Predict with ALL models
-if st.button("🚀 Predict House Price", type="primary"):
+if st.button(" Predict House Price", type="primary"):
     with st.spinner("Predicting with 5 models..."):
         input_scaled = scaler.transform(input_data)
         
