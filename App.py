@@ -49,6 +49,12 @@ with col2:
     sqft_basement = st.number_input("Sqft Basement",   0,   2000,  500)
     sqft_lot15    = st.number_input("Sqft Lot15",    500,  50000, 7500)
 
+col1, col2 = st.sidebar.columns(2)
+with col1:
+    sale_year = st.selectbox("Sale Year", [2014, 2015])
+with col2:
+    sale_month = st.slider("Sale Month", 1, 12, 6)
+
 view = st.sidebar.slider("View Score (0-4)", 0, 4, 0)
 
 col1, col2 = st.sidebar.columns(2)
