@@ -94,7 +94,7 @@ raw_input = pd.DataFrame([{
     "lat":                  lat,
     "long":                 long,
     "sale_year":            sale_year,
-    "sale_month":           sale_monthyear,
+    "sale_month":           sale_month,
     "mean_price_by_zipcode": mean_price_by_zipcode,
     "age":                  age,
     "was_renovated":        was_renovated
