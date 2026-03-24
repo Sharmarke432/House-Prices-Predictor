@@ -65,4 +65,4 @@ if st.button("Predict Price"):
     log_pred = model.predict(input_data)
     price     = np.expm1(log_pred[0])
 
-    st.success(f"💰 Predicted Price: £{price:,.0f}")
+    st.success(f" Predicted Price: £{price}")
