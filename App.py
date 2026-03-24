@@ -5,7 +5,6 @@ import joblib
 
 # ── Load your trained model ───────────────────────────────────────
 model = joblib.load("xgb_model.pkl")
-df = pd.read_csv("
 st.title("House Price Predictor")
 
 #load mapping
