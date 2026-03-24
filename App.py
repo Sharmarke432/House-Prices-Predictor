@@ -19,8 +19,8 @@ FEATURE_ORDER = [
 @st.cache_resource
 def load_models():
     return {
-        "XGBoost":  joblib.load("xgboost_model.pkl"),
-        "LightGBM": joblib.load("lightgbm_model.pkl"),
+        "XGBoost":  joblib.load("xgb_model.pkl"),
+        "LightGBM": joblib.load("light_gbm.pkl"),
         "Ridge":    joblib.load("ridge_model.pkl"),
         "KNN":      joblib.load("knn_model.pkl"),
     }
