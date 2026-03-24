@@ -14,8 +14,8 @@ st.markdown("Multiple models trained on King County Housing Dataset")
 def load_models():
     models = {
         "Ridge": joblib.load("ridge_model.pkl"),
-        "LightGBM": joblib.load("lightgbm_model.pkl"), 
-        "XGBoost": joblib.load("xgboost_model.pkl"),
+        "LightGBM": joblib.load("light_gbm.pkl"), 
+        "XGBoost": joblib.load("xgb_model.pkl"),
         "KNN": joblib.load("knn_model.pkl")
     }
     scaler = joblib.load("scaler.pkl")
