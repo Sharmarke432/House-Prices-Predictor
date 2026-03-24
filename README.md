@@ -11,17 +11,6 @@ This project covers the full data science pipeline:
 - Hyperparameter tuning with Optuna
 - Deployment as an interactive Streamlit web app
 
-## 🗂️ Project Structure
-├── data/
-│ └── housing.csv # King County housing dataset
-├── notebooks/
-│ └── eda.ipynb # EDA and model training notebook
-├── app.py # Streamlit web app
-├── xgb_model.pkl # Saved XGBoost model
-├── requirements.txt # Project dependencies
-└── README.md
-
-
 ## Models Compared
 
 | Model | MAE | RMSE | R² |
