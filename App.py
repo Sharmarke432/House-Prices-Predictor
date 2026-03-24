@@ -111,27 +111,30 @@ def get_training_stats():
         print(X_train.std().to_dict())
     """
     means = {
-        "bedrooms": 3.37, "bathrooms": 2.11, "sqft_living": 2079.9,
-        "sqft_lot": 15107.0, "floors": 1.49, "waterfront": 0.007,
-        "view": 0.23, "condition": 3.41, "grade": 7.66,
-        "sqft_above": 1788.6, "sqft_basement": 291.5,
-        "yr_built": 1971.0, "yr_renovated": 84.4,
-        "lat": 47.56, "long": -122.21,
-        "sqft_living15": 1986.6, "sqft_lot15": 12768.5,
-        "mean_price_by_zipcode": 540088.0,
-        "age": 44.0, "was_renovated": 0.21
-    }
+        'bedrooms': 3.368131868131868, 'bathrooms': 2.113794100636206, 
+         'sqft_living': 2073.838230190862, 'sqft_lot': 13675.66032388664, 
+         'floors': 1.4991613649508386, 'waterfront': 0.007171775592828224, 
+         'view': 0.23302486986697513, 'condition': 3.407576633892423, 
+         'grade': 7.653846153846154, 'sqft_above': 1785.962174667438, 
+         'sqft_basement': 287.9327356853673, 'yr_built': 1971.1083285135917, 
+         'yr_renovated': 83.00341237709658, 'lat': 47.56032955465587, 
+         'long': -122.21413898207057, 'sqft_living15': 1982.9045691150955, 
+         'sqft_lot15': 12725.05934065934, 'zipcode_mean_price': 539974.108273377, 
+         'sale_year': 2014.3218045112783, 'sale_month': 6.580624638519375
+        }
+        
     stds = {
-        "bedrooms": 0.93, "bathrooms": 0.77, "sqft_living": 918.4,
-        "sqft_lot": 41420.5, "floors": 0.54, "waterfront": 0.085,
-        "view": 0.76, "condition": 0.65, "grade": 1.17,
-        "sqft_above": 827.8, "sqft_basement": 442.6,
-        "yr_built": 29.4, "yr_renovated": 401.7,
-        "lat": 0.14, "long": 0.14,
-        "sqft_living15": 685.4, "sqft_lot15": 27304.2,
-        "mean_price_by_zipcode": 149999.0,
-        "age": 29.4, "was_renovated": 0.41
-    }
+        {'bedrooms': 0.9313854099384082, 'bathrooms': 0.7667900113906938, 
+         'sqft_living': 905.9916006933574, 'sqft_lot': 26332.35253480706, 
+         'floors': 0.5428185387197385, 'waterfront': 0.08438455468836581,
+         'view': 0.7617490399212402, 'condition': 0.6516976172363061, 
+         'grade': 1.170354826522681, 'sqft_above': 821.6262895556258, 
+         'sqft_basement': 438.7271098728944, 'yr_built': 29.43560337129589,
+         'yr_renovated': 398.5032504016553, 'lat': 0.13843197869665164, 
+         'long': 0.1404983028161792, 'sqft_living15': 681.2324250190942, 
+         'sqft_lot15': 27525.25828514831, 'zipcode_mean_price': 233196.5653021182,
+         'sale_year': 0.4671819679980777, 'sale_month': 3.1125763792916787
+        }
     return means, stds
 
 means, stds = get_training_stats()
