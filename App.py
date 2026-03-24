@@ -8,6 +8,15 @@ model = joblib.load("xgb_model.pkl")
 
 st.title("House Price Predictor")
 
+#load mapping
+@st.cache_data
+def load_zipcode_stats():
+    return pd.read_csv("zipcode_mean_prices.csv")
+
+zipcode_stats = load_zipcode_stats()
+zipcode_mean_map = dict(zip(zipcode_stats["zipcode"], zipcode_stats["price"]))
+
+
 # ── User Inputs ───────────────────────────────────────────────────
 bedrooms      = st.slider("Bedrooms", 1, 10, 3)
 bathrooms     = st.slider("Bathrooms", 1.0, 8.0, 2.0, step=0.5)
@@ -35,6 +44,10 @@ zipcode = st.number_input(
     value=98002,
     step=1
 )
+
+#transform zipcode
+zipcode_mean_price = zipcode_mean_map.get(zipcode, df["price"].mean())
+
 # ── Predict ───────────────────────────────────────────────────────
 if st.button("Predict Price"):
     input_data = pd.DataFrame([{
