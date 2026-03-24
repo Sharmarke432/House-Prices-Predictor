@@ -28,8 +28,13 @@ sqft_living15 = st.number_input("Sqft Living (neighbours)", 500, 6000, 1800)
 sqft_lot15    = st.number_input("Sqft Lot (neighbours)", 500, 30000, 5000)
 sale_year     = st.selectbox("Sale Year", [2014, 2015])
 sale_month    = st.slider("Sale Month", 1, 12, 6)
-zipcode_mean_price = st.number_input("Zipcode Mean Price", 0, 3000000, 500000)
-
+zipcode = st.number_input(
+    "Zipcode",
+    min_value=98001,
+    max_value=98200,
+    value=98002,
+    step=1
+)
 # ── Predict ───────────────────────────────────────────────────────
 if st.button("Predict Price"):
     input_data = pd.DataFrame([{
