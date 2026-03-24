@@ -43,11 +43,9 @@ col1, col2 = st.sidebar.columns(2)
 with col1:
     sqft_living   = st.number_input("Sqft Living",   500,  8000, 2000)
     sqft_above    = st.number_input("Sqft Above",    500,  5000, 1500)
-    sqft_living15 = st.number_input("Sqft Living15", 500,  5000, 1800)
 with col2:
     sqft_lot      = st.number_input("Sqft Lot",      500, 100000, 8000)
     sqft_basement = st.number_input("Sqft Basement",   0,   2000,  500)
-    sqft_lot15    = st.number_input("Sqft Lot15",    500,  50000, 7500)
 
 col1, col2 = st.sidebar.columns(2)
 with col1:
@@ -95,8 +93,8 @@ raw_input = pd.DataFrame([{
     "yr_renovated":         yr_renovated,
     "lat":                  lat,
     "long":                 long,
-    "sqft_living15":        sqft_living15,
-    "sqft_lot15":           sqft_lot15,
+    "sale_year":            sale_year,
+    "sale_month":           sale_monthyear,
     "mean_price_by_zipcode": mean_price_by_zipcode,
     "age":                  age,
     "was_renovated":        was_renovated
