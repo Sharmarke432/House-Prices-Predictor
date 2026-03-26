@@ -158,7 +158,7 @@ if st.button("🚀 Predict Price", type="primary", use_container_width=True):
     scaled_input = scale_input(raw_input)
 
     st.subheader("Predictions")
-    cols = st.columns(3)
+    cols = st.columns(5)
     valid_preds = []
 
     for i, (name, model) in enumerate(models.items()):
