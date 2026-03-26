@@ -10,10 +10,9 @@ st.markdown("Predictions from **4 ML models** trained on King County Housing Dat
 FEATURE_ORDER = ['bedrooms', 'bathrooms', 'sqft_living', 
                  'sqft_lot', 'floors', 'waterfront', 
                  'view', 'condition', 'grade', 
-                 'sqft_basement', 
-                 'yr_built', 'yr_renovated', 
-                 'lat', 'long', 'sale_year', 
-                 'sale_month', 'zipcode_mean_price']
+                 'sqft_basement', 'yr_built', 
+                 'yr_renovated', 'lat', 'long', 
+                 'sale_year', 'sale_month', 'zipcode_mean_price']
 
 # ── Load Models ───────────────────────────────────────────────────
 @st.cache_resource
