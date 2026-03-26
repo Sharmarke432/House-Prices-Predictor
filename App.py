@@ -147,7 +147,7 @@ def scale_input(df):
     for col in df.columns:
         if col in means and stds[col] > 0:
             scaled[col] = (df[col] - means[col]) / stds[col]
-    return scaled.values  # ✅ numpy array for sklearn models
+    return scaled  # ✅ numpy array for sklearn models
 
 # ── Predict ───────────────────────────────────────────────────────
 if st.button("🚀 Predict Price", type="primary", use_container_width=True):
