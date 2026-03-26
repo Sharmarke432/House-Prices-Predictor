@@ -153,8 +153,8 @@ def scale_input(df):
 if st.button("🚀 Predict Price", type="primary", use_container_width=True):
     scaled_input = scale_input(raw_input)
 
-    st.subheader("💰 Predictions")
-    cols = st.columns(4)
+    st.subheader("Predictions")
+    cols = st.columns(3)
     valid_preds = []
 
     for i, (name, model) in enumerate(models.items()):
