@@ -69,8 +69,6 @@ with col2:
     long         = st.number_input("Longitude", -122.5, -121.0, -122.2, format="%.4f")
     sale_month   = st.slider("Sale Month", 1, 12, 6)
 
-zipcode = st.sidebar.number_input("Zipcode", 98001, 98200, 98002)
-
 # ── Zipcode Transform ─────────────────────────────────────────────
 if zipcode in zipcode_map:
     zipcode_mean_price = zipcode_map[zipcode]
