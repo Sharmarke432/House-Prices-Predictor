@@ -21,8 +21,7 @@ def load_models():
     return {
         "XGBoost":  joblib.load("xgb_model.pkl"),
         "LightGBM": joblib.load("light_gbm.pkl"),
-        "Ridge":    joblib.load("ridge_model.pkl"),
-        "KNN":      joblib.load("knn_model.pkl"),
+        "RandomForest":  joblib.load("rf_model.pkl"),
     }
 
 @st.cache_data
@@ -50,11 +49,9 @@ col1, col2 = st.sidebar.columns(2)
 with col1:
     sqft_living   = st.number_input("Sqft Living",   500,  8000, 2000)
     sqft_above    = st.number_input("Sqft Above",    500,  5000, 1500)
-    sqft_living15 = st.number_input("Sqft Living15", 500,  5000, 1800)
 with col2:
     sqft_lot      = st.number_input("Sqft Lot",      500, 100000, 8000)
     sqft_basement = st.number_input("Sqft Basement",   0,   2000,  500)
-    sqft_lot15    = st.number_input("Sqft Lot15",    500,  50000, 7500)
 
 view = st.sidebar.slider("View Score (0-4)", 0, 4, 0)
 
@@ -94,8 +91,6 @@ raw_input = pd.DataFrame([{
     'yr_renovated':      yr_renovated,
     'lat':               lat,
     'long':              long,
-    'sqft_living15':     sqft_living15,
-    'sqft_lot15':        sqft_lot15,
     'zipcode_mean_price': zipcode_mean_price,
     'sale_year':         sale_year,
     'sale_month':        sale_month,
@@ -120,8 +115,6 @@ def get_training_stats():
         'yr_renovated': 83.00341237709658,
         'lat': 47.56032955465587,
         'long': -122.21413898207057,
-        'sqft_living15': 1982.9045691150955,
-        'sqft_lot15': 12725.05934065934,
         'zipcode_mean_price': 539974.108273377,
         'sale_year': 2014.3218045112783,
         'sale_month': 6.580624638519375
@@ -142,8 +135,6 @@ def get_training_stats():
         'yr_renovated': 398.5032504016553,
         'lat': 0.13843197869665164,
         'long': 0.1404983028161792,
-        'sqft_living15': 681.2324250190942,
-        'sqft_lot15': 27525.25828514831,
         'zipcode_mean_price': 233196.5653021182,
         'sale_year': 0.4671819679980777,
         'sale_month': 3.1125763792916787
@@ -191,8 +182,7 @@ with st.expander("📊 Model Performance"):
     |---|---|---|---|
     | **XGBoost** | 0.893 | $64,545 | $127,023 |
     | **LightGBM** | 0.882 | $67,606 | $133,727 |
-    | **Ridge** | 0.789 | $103,340 | $178,565 |
-    | **KNN** | 0.819 | $84,779 | $165,606 |
+    | **RandomForest**| 0.8726 | $73,643 | $130,321 |
     """)
 
 st.caption("King County Housing Dataset · Seattle, WA · 2014-2015")
