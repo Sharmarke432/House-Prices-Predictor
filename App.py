@@ -10,7 +10,7 @@ st.markdown("Predictions from **4 ML models** trained on King County Housing Dat
 FEATURE_ORDER = ['bedrooms', 'bathrooms', 'sqft_living', 
                  'sqft_lot', 'floors', 'waterfront', 
                  'view', 'condition', 'grade', 
-                 'sqft_above', 'sqft_basement', 
+                 'sqft_basement', 
                  'yr_built', 'yr_renovated', 
                  'lat', 'long', 'sale_year', 
                  'sale_month', 'zipcode_mean_price']
@@ -51,7 +51,8 @@ with col2:
 col1, col2 = st.sidebar.columns(2)
 with col1:
     sqft_living   = st.number_input("Sqft Living",   500,  8000, 2000)
-    sqft_above    = st.number_input("Sqft Above",    500,  5000, 1500)
+    zipcode = st.sidebar.number_input("Zipcode", 98001, 98200, 98002)
+
 with col2:
     sqft_lot      = st.number_input("Sqft Lot",      500, 100000, 8000)
     sqft_basement = st.number_input("Sqft Basement",   0,   2000,  500)
@@ -88,7 +89,6 @@ raw_input = pd.DataFrame([{
     'view':              view,
     'condition':         condition,
     'grade':             grade,
-    'sqft_above':        sqft_above,
     'sqft_basement':     sqft_basement,
     'yr_built':          yr_built,
     'yr_renovated':      yr_renovated,
@@ -112,7 +112,6 @@ def get_training_stats():
         'view': 0.23302486986697513,
         'condition': 3.407576633892423,
         'grade': 7.653846153846154,
-        'sqft_above': 1785.962174667438,
         'sqft_basement': 287.9327356853673,
         'yr_built': 1971.1083285135917,
         'yr_renovated': 83.00341237709658,
@@ -132,7 +131,6 @@ def get_training_stats():
         'view': 0.7617490399212402,
         'condition': 0.6516976172363061,
         'grade': 1.170354826522681,
-        'sqft_above': 821.6262895556258,
         'sqft_basement': 438.7271098728944,
         'yr_built': 29.43560337129589,
         'yr_renovated': 398.5032504016553,
@@ -183,11 +181,11 @@ with st.expander("📊 Model Performance"):
     st.markdown("""
     | Model | R² | MAE | RMSE |
     |---|---|---|---|
-    | **XGBoost** | 0.9045 | $61,141 | $104,231 |
-    | **LightGBM** | 0.9029 | $62,206 | $106,844 |
-    | **RandomForest**| 0.8698 | $72,850 | $122,733 |
-    | **K-Nearest**| 0.8243 | $82,334 | $144,944 |
-    | **Ridge**| 0.8056 | $94,581 | $147,814 |
+    | **XGBoost** | 0.9066 | $59,377 | $102,520 |
+    | **LightGBM** | 0.9026 | $£62,233 | $106,890 |
+    | **RandomForest**| 0.8714 | $73,136 | $£121,726 |
+    | **K-Nearest**| 0.8167 | $83,935 | $148,043 |
+    | **Ridge**| 0.8056 | $94,578 | $147,818 |
 
     """)
 
