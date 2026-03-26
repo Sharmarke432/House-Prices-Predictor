@@ -18,10 +18,13 @@ FEATURE_ORDER = [
 @st.cache_resource
 def load_models():
     return {
-        "XGBoost":  joblib.load("xgb_model.pkl"),
-        "LightGBM": joblib.load("light_gbm.pkl"),
-        "RandomForest":  joblib.load("rf_model.pkl"),
+        "XGBoost":      joblib.load("xgb_model.pkl"),
+        "LightGBM":     joblib.load("light_gbm.pkl"),
+        "RandomForest": joblib.load("rf_model.pkl"),
+        "Ridge":        joblib.load("ridge_model.pkl"),
+        "KNN":          joblib.load("knn_model.pkl"),
     }
+
 
 @st.cache_data
 def load_zipcode_map():
@@ -179,9 +182,12 @@ with st.expander("📊 Model Performance"):
     st.markdown("""
     | Model | R² | MAE | RMSE |
     |---|---|---|---|
-    | **XGBoost** | 0.893 | $64,545 | $127,023 |
-    | **LightGBM** | 0.882 | $67,606 | $133,727 |
-    | **RandomForest**| 0.8726 | $73,643 | $130,321 |
+    | **XGBoost** | 0.9045 | $61,141 | $104,231 |
+    | **LightGBM** | 0.9029 | $62,206 | $106,844 |
+    | **RandomForest**| 0.8698 | $72,850 | $122,733 |
+    | **K-Nearest**| 0.8243 | $82,334 | $144,944 |
+    | **Ridge**| 0.8056 | $94,581 | $147,814 |
+
     """)
 
 st.caption("King County Housing Dataset · Seattle, WA · 2014-2015")
