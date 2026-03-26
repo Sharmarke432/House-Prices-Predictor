@@ -11,8 +11,7 @@ FEATURE_ORDER = [
     'bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors',
     'waterfront', 'view', 'condition', 'grade', 'sqft_above',
     'sqft_basement', 'yr_built', 'yr_renovated', 'lat', 'long',
-    'sqft_living15', 'sqft_lot15', 'zipcode_mean_price',
-    'sale_year', 'sale_month'
+    'zipcode_mean_price', 'sale_year', 'sale_month'
 ]
 
 # ── Load Models ───────────────────────────────────────────────────
