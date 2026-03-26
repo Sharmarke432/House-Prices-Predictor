@@ -5,7 +5,7 @@ import joblib
 
 st.set_page_config(page_title="🏠 House Price Predictor", layout="wide")
 st.title("🏠 King County House Price Predictor")
-st.markdown("Predictions from **4 ML models** trained on King County Housing Dataset")
+st.markdown("Predictions from **5 ML models** trained on King County Housing Dataset")
 
 FEATURE_ORDER = ['bedrooms', 'bathrooms', 'sqft_living', 
                  'sqft_lot', 'floors', 'waterfront', 
@@ -50,7 +50,6 @@ with col2:
 col1, col2 = st.sidebar.columns(2)
 with col1:
     sqft_living   = st.number_input("Sqft Living",   500,  8000, 2000)
-    zipcode = st.sidebar.number_input("Zipcode", 98001, 98200, 98002)
 
 with col2:
     sqft_lot      = st.number_input("Sqft Lot",      500, 100000, 8000)
@@ -67,6 +66,8 @@ with col2:
     yr_renovated = st.number_input("Year Renovated (0=none)", 0, 2015, 0)
     long         = st.number_input("Longitude", -122.5, -121.0, -122.2, format="%.4f")
     sale_month   = st.slider("Sale Month", 1, 12, 6)
+
+zipcode = st.sidebar.number_input("Zipcode", 98001, 98200, 98002)
 
 # ── Zipcode Transform ─────────────────────────────────────────────
 if zipcode in zipcode_map:
